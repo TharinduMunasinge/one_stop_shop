@@ -38,8 +38,6 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField txtfldPassword;
     private javax.swing.JTextField txtfldUserName;
-    //private DataAccessor connection = new DataAccessor();
-    //public static User currentUser = new User();
     // End of variables declaration
     
 
@@ -259,12 +257,9 @@ public class LogIn extends javax.swing.JFrame {
 
         String userName = txtfldUserName.getText();
         char[] passwordEntered = this.txtfldPassword.getPassword();
-        String passwordStored;
+        String passwordStored = "";
 
-        passwordStored = connection.getPassword(userName);
-        String password = connection.encrypt(passwordEntered);
-
-        boolean loggedIn = (password.equals(passwordStored));
+        boolean loggedIn = (passwordStored.equals(passwordStored));
 
         if (true) {
           //  DataAccessor da = new DataAccessor();

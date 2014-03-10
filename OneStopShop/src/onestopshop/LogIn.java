@@ -30,6 +30,10 @@ import javax.swing.event.CaretListener;
 
 public class LogIn extends javax.swing.JFrame {
 
+    public static String getCurrentUser() {
+        return user;
+    }
+
     // Variables declaration - do not modify
     private javax.swing.JButton btnLogIn;
     private javax.swing.JLabel lableWelcome;
@@ -39,6 +43,7 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtfldPassword;
     private javax.swing.JTextField txtfldUserName;
     // End of variables declaration
+    private static String user = "UNKNOWN";
     
 
     /**
@@ -76,6 +81,10 @@ public class LogIn extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) throws Exception {
+        display();
+    }
+    
+    public static void display() throws InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException{
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -256,6 +265,7 @@ public class LogIn extends javax.swing.JFrame {
     private void logIn(java.awt.event.ActionEvent evt) throws ClassNotFoundException, SQLException {
 
         String userName = txtfldUserName.getText();
+        setcurrentUser(userName);
         char[] passwordEntered = this.txtfldPassword.getPassword();
         String passwordStored = "";
 
@@ -308,5 +318,9 @@ public class LogIn extends javax.swing.JFrame {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(LogIn.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    private void setcurrentUser(String userName) {
+        user = userName;
     }
 }

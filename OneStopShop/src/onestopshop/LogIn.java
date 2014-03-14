@@ -33,7 +33,6 @@ public class LogIn extends javax.swing.JFrame {
     public static String getCurrentUser() {
         return user;
     }
-
     // Variables declaration - do not modify
     private javax.swing.JButton btnLogIn;
     private javax.swing.JLabel lableWelcome;
@@ -44,7 +43,6 @@ public class LogIn extends javax.swing.JFrame {
     private javax.swing.JTextField txtfldUserName;
     // End of variables declaration
     private static String user = "UNKNOWN";
-    
 
     /**
      * Creates new form LogIn
@@ -83,8 +81,8 @@ public class LogIn extends javax.swing.JFrame {
     public static void main(String args[]) throws Exception {
         display();
     }
-    
-    public static void display() throws InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException{
+
+    public static void display() throws InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -272,7 +270,7 @@ public class LogIn extends javax.swing.JFrame {
         boolean loggedIn = (passwordStored.equals(passwordStored));
 
         if (true) {
-          //  DataAccessor da = new DataAccessor();
+            //  DataAccessor da = new DataAccessor();
             JOptionPane.showMessageDialog(this, "Login Successful.");
             //currentUser.setUserFirstName(txtfldUserName.getText());
             //currentUser.setType(da.getUserType(userName));
@@ -291,7 +289,7 @@ public class LogIn extends javax.swing.JFrame {
             this.setVisible(false);
             try {
                 UIManager.setLookAndFeel("de.javasoft.plaf.synthetica.SyntheticaAluOxideLookAndFeel");
-            } catch (    ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
                 Logger.getLogger(LogIn.class.getName()).log(Level.SEVERE, null, ex);
             }
             //MainGUI mi = new MainGUI();

@@ -8,14 +8,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JTable;
-import javax.swing.table.TableColumn;
 
 /**
  *
@@ -27,47 +23,52 @@ public class DataConnection {
         try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/One_Stop_Shop", "root", "");
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost/One_Stop_Shop", "root", "");
             return con;
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(DataConnection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DataConnection.class.getName()).log(Level.SEVERE,
+                    null, ex);
 
         }
         return null;
     }
 
-    public static void insertData(String ID, String addressCity,
-            String addressNumber, String addressStreet, String email,
-            String name, String type) {
+    public static int insertData(String table , String [][] details) {
+        int temp = 0;
         try {
             Connection con = getConnection();
+            String values = "'";
+            
+            for (int i = 0; i < details.length; i++) {
+                    values += details[i][0] +"','";
+            }
+            
+            values = values.substring(0, values.length()-2);
             PreparedStatement pStmt = con.prepareStatement(
-                    "insert into customer value(?,?,?,?,?,?,?)");
-            pStmt.setString(1, ID);
-            pStmt.setString(2, name);
-            pStmt.setString(3, addressCity);
-            pStmt.setString(4, addressStreet);
-            pStmt.setString(5, addressNumber);
-            pStmt.setString(6, email);
-            pStmt.setString(7, type);
-            pStmt.executeUpdate();
+                    "insert into "+ table +" value("+values+")");
+            System.out.println("Statement : " + pStmt);
+            temp = pStmt.executeUpdate();
             pStmt.close();
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(DataConnection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DataConnection.class.getName()).log(Level.SEVERE,
+                    null, ex);
         }
+        return temp;
     }
 
-    public static String getLastCustomerId( ) {
+    public static String getLastId(String table) {
         int temp = 1;
         try {
             String id = "0";
             Connection con = getConnection();
-            String query = "select CustomerID from Customer order by 1 desc limit 1";
+            String query = "select " + table + "ID from " + table + " order by 1 desc "
+                    + "limit 1";
             Statement stmnt = con.createStatement();
             ResultSet res = stmnt.executeQuery(query);
             System.out.println("Checked." + res);
-            if (res == null ){
+            if (res == null) {
                 return "000001";
             }
             while (res.next()) {
@@ -78,65 +79,72 @@ public class DataConnection {
             temp++;
             con.close();
         } catch (SQLException ex) {
-            Logger.getLogger(DataConnection.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DataConnection.class.getName()).log(Level.SEVERE,
+                    null, ex);
         }
         String s = Float.toString(temp);
         s = s.substring(0, s.length() - 2);
         System.out.println(s);
-        while(s.length() < 6){
+        while (s.length() < 6) {
             s = "0" + s;
         }
         return s;
     }
 
-    public static JTable getSelectedData(String tableName, String[] param, 
-            String[] predicate) {
-        String values = "";
-        for (int i = 0; i < 5; i++) {
-            if(param[i] != null){
-                values += param[i] +",";
+    public static ResultSet getSelectedData(String tableName, String[] param,
+            String attr, String predicate) {
+        try {
+            String values = "";
+            for (int i = 0; i < param.length; i++) {
+                System.out.println("Parameter " + i + " : " + param[i]);
+                if (!param[i].equals("")) {
+                    values += param[i] + ",";
+                }
             }
+
+            values = values.substring(0, values.length() - 1);
+            System.out.println("Values " + values);
+            System.out.println("Predicates " + predicate);
+
+            Connection con = DataConnection.getConnection();
+            PreparedStatement pStmt = con.prepareStatement(
+                    "select " + values + " from " + tableName + " where "
+                    + attr + " = '" + predicate + "';");
+            System.out.println("Statement " + pStmt);
+            ResultSet resultSet = pStmt.executeQuery();
+
+            return resultSet;
+        } catch (SQLException ex) {
+            Logger.getLogger(DataConnection.class.getName()).log(Level.SEVERE,
+                    null, ex);
         }
-        values = values.substring(0, values.length() - 1);
-        System.out.println("Values " + values);
-        
-        Vector columnNames = new Vector();
-        Vector data = new Vector();
+        return null;
+    }
+
+    public static boolean update(String table, String update) {
+        try {
+            Connection con = DataConnection.getConnection();
+            PreparedStatement pStmt = con.prepareStatement(update);
+            pStmt.execute();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(DataConnection.class.getName()).log(Level.SEVERE,
+                    null, ex);
+            return false;
+        }
+    }
+
+    public static boolean remove(String table, String val, String attr) {
         try {
             Connection con = DataConnection.getConnection();
             PreparedStatement pStmt = con.prepareStatement(
-                    "select "+values+ " from "+tableName+" where " + predicate[0]+" ="
-                    + " '"+predicate[1]+"';");
-            System.out.println("Statement " +pStmt);
-            ResultSet resultSet = pStmt.executeQuery();
-            ResultSetMetaData metaData = resultSet.getMetaData();
-            int columns = metaData.getColumnCount();
-            for (int i = 1; i <= columns; i++) {
-                columnNames.addElement(metaData.getColumnName(i));
-                System.out.println("Column "+metaData.getColumnName(i));
-            }
-            while (resultSet.next()) {
-                System.out.println("while");
-                Vector row = new Vector(columns);
-                for (int i = 1; i <= columns; i++) {
-                    row.addElement(resultSet.getObject(i));
-                }
-                data.addElement(row);
-            }
-            resultSet.close();
-            pStmt.close();
-        } catch (Exception e) {
-            System.out.println(e);
+                    "DELETE FROM " + table + " WHERE " + attr + " = '"
+                    + val + "'");
+            return pStmt.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(DataConnection.class.getName()).log(Level.SEVERE,
+                    null, ex);
+            return false;
         }
-        System.out.println("Done resultset.");
-        JTable table = new JTable(data, columnNames);
-        TableColumn column;
-        for (int i = 0; i < table.getColumnCount(); i++) {
-            System.out.println("For");
-            column = table.getColumnModel().getColumn(i);
-            column.setMaxWidth(250);
-        }
-        
-        return table;
     }
 }

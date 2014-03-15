@@ -256,6 +256,10 @@ public class ManagerView extends javax.swing.JFrame {
         pnlEditOrder = new javax.swing.JPanel();
         pnlNewOrder = new javax.swing.JPanel();
         pnlRmvOrder = new javax.swing.JPanel();
+        pnlNewOrder1 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jTabbedPane7 = new javax.swing.JTabbedPane();
         pnlFindOrder1 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
@@ -312,7 +316,7 @@ public class ManagerView extends javax.swing.JFrame {
             .addGroup(NotificationPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(522, Short.MAX_VALUE))
         );
 
         jTabbedPane1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
@@ -435,7 +439,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnHomeRep, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnHomeUserAcco, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
                 .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLoginData, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnHomeLogOut))
@@ -570,7 +574,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnFindCustCancel)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Find Customer", pnlFindCust);
@@ -709,7 +713,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addGroup(pnlNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNewCustCancel)
                     .addComponent(btnNewCustCreate))
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("New Customer", pnlNewCustomer);
@@ -785,7 +789,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addGroup(pnlRmvCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRmvCustRmv)
                     .addComponent(btnRmvCustCancel))
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addContainerGap(239, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Remove Customer", pnlRmvCust);
@@ -809,6 +813,11 @@ public class ManagerView extends javax.swing.JFrame {
         jLabel33.setText("Number");
 
         cmbEditCustType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Mail-Order", "Long Term", "Walk-In VIP" }));
+        cmbEditCustType.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbEditCustTypeItemStateChanged(evt);
+            }
+        });
 
         jLabel31.setText("City");
 
@@ -968,7 +977,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEditCustCancel)
                     .addComponent(btnEditCustUpdate))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlEditCustLayout = new javax.swing.GroupLayout(pnlEditCust);
@@ -1089,7 +1098,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnFindSupCancel)
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addContainerGap(245, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("Find Supplier", pnlFindSup);
@@ -1255,7 +1264,7 @@ public class ManagerView extends javax.swing.JFrame {
                     .addComponent(btnEditSupCancel)
                     .addComponent(btnEditSupUpdate)
                     .addComponent(btnEditSupRmv))
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addContainerGap(171, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("Edit Supplier", pnlEditSup);
@@ -1383,7 +1392,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addGroup(pnlNewSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNewSupCancel)
                     .addComponent(btnNewSupCreate))
-                .addContainerGap(212, Short.MAX_VALUE))
+                .addContainerGap(291, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("New Supplier", pnlNewSup);
@@ -1518,7 +1527,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnFindRepCancel)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
 
         jTabbedPane6.addTab("Find Sales Rep", pnlFindCust1);
@@ -1647,7 +1656,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addGroup(pnlNewSalesRepLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNewRepCancel)
                     .addComponent(btnNewRepCreate))
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
 
         jTabbedPane6.addTab("New Sales Rep", pnlNewSalesRep);
@@ -1816,7 +1825,7 @@ public class ManagerView extends javax.swing.JFrame {
                     .addComponent(btnEditRepCancel)
                     .addComponent(btnEditRepUpdate)
                     .addComponent(btnEditRepRmv))
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         jTabbedPane6.addTab("Edit Sales Rep Details", pnlEditCust1);
@@ -1842,7 +1851,7 @@ public class ManagerView extends javax.swing.JFrame {
         );
         pnlFindItemLayout.setVerticalGroup(
             pnlFindItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 445, Short.MAX_VALUE)
+            .addGap(0, 524, Short.MAX_VALUE)
         );
 
         jTabbedPane5.addTab("Find Item", pnlFindItem);
@@ -1855,7 +1864,7 @@ public class ManagerView extends javax.swing.JFrame {
         );
         pnlUpdateItemLayout.setVerticalGroup(
             pnlUpdateItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 445, Short.MAX_VALUE)
+            .addGap(0, 524, Short.MAX_VALUE)
         );
 
         jTabbedPane5.addTab("Update Item", pnlUpdateItem);
@@ -1868,7 +1877,7 @@ public class ManagerView extends javax.swing.JFrame {
         );
         pnlNewItemLayout.setVerticalGroup(
             pnlNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 445, Short.MAX_VALUE)
+            .addGap(0, 524, Short.MAX_VALUE)
         );
 
         jTabbedPane5.addTab("New Item", pnlNewItem);
@@ -1881,7 +1890,7 @@ public class ManagerView extends javax.swing.JFrame {
         );
         pnlRmvItemLayout.setVerticalGroup(
             pnlRmvItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 445, Short.MAX_VALUE)
+            .addGap(0, 524, Short.MAX_VALUE)
         );
 
         jTabbedPane5.addTab("Remove Item", pnlRmvItem);
@@ -1907,7 +1916,7 @@ public class ManagerView extends javax.swing.JFrame {
         );
         pnlFindOrderLayout.setVerticalGroup(
             pnlFindOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 434, Short.MAX_VALUE)
+            .addGap(0, 513, Short.MAX_VALUE)
         );
 
         jTabbedPane3.addTab("Find Order", pnlFindOrder);
@@ -1920,7 +1929,7 @@ public class ManagerView extends javax.swing.JFrame {
         );
         pnlEditOrderLayout.setVerticalGroup(
             pnlEditOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 434, Short.MAX_VALUE)
+            .addGap(0, 513, Short.MAX_VALUE)
         );
 
         jTabbedPane3.addTab("Edit Order", pnlEditOrder);
@@ -1933,7 +1942,7 @@ public class ManagerView extends javax.swing.JFrame {
         );
         pnlNewOrderLayout.setVerticalGroup(
             pnlNewOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 434, Short.MAX_VALUE)
+            .addGap(0, 513, Short.MAX_VALUE)
         );
 
         jTabbedPane3.addTab("New Order", pnlNewOrder);
@@ -1946,10 +1955,53 @@ public class ManagerView extends javax.swing.JFrame {
         );
         pnlRmvOrderLayout.setVerticalGroup(
             pnlRmvOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 434, Short.MAX_VALUE)
+            .addGap(0, 513, Short.MAX_VALUE)
         );
 
         jTabbedPane3.addTab("Remove Order", pnlRmvOrder);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable1);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(75, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout pnlNewOrder1Layout = new javax.swing.GroupLayout(pnlNewOrder1);
+        pnlNewOrder1.setLayout(pnlNewOrder1Layout);
+        pnlNewOrder1Layout.setHorizontalGroup(
+            pnlNewOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnlNewOrder1Layout.setVerticalGroup(
+            pnlNewOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jTabbedPane3.addTab("Process Order", pnlNewOrder1);
 
         javax.swing.GroupLayout pnlOrdersLayout = new javax.swing.GroupLayout(pnlOrders);
         pnlOrders.setLayout(pnlOrdersLayout);
@@ -2047,7 +2099,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnUserCancel)
                     .addComponent(btnUserCreate))
-                .addContainerGap(212, Short.MAX_VALUE))
+                .addContainerGap(291, Short.MAX_VALUE))
         );
 
         jTabbedPane7.addTab("Create User", pnlFindOrder1);
@@ -2157,7 +2209,7 @@ public class ManagerView extends javax.swing.JFrame {
                     .addComponent(jButton25)
                     .addComponent(jButton24)
                     .addComponent(jButton27))
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(250, Short.MAX_VALUE))
         );
 
         jTabbedPane7.addTab("Edit User", pnlEditOrder1);
@@ -2171,17 +2223,17 @@ public class ManagerView extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jTabbedPane1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(NotificationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addGap(12, 12, 12))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTabbedPane1)
-                    .addComponent(NotificationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NotificationPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -2655,6 +2707,21 @@ public class ManagerView extends javax.swing.JFrame {
         btnFindCustFind.setEnabled(true);
     }//GEN-LAST:event_txtFindCustValFocusGained
 
+    private void cmbEditCustTypeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbEditCustTypeItemStateChanged
+        // TODO add your handling code here:
+        switch(cmbEditCustType.getSelectedIndex()){
+            case 1:
+                // create a Mail Order 
+                break;
+            case 2:
+                // create a Long term Customer
+                break;
+            case 3:
+                // create a walk in VIP
+                break;
+        }
+    }//GEN-LAST:event_cmbEditCustTypeItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -2833,11 +2900,13 @@ public class ManagerView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -2850,6 +2919,7 @@ public class ManagerView extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTabbedPane jTabbedPane6;
     private javax.swing.JTabbedPane jTabbedPane7;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
@@ -2876,6 +2946,7 @@ public class ManagerView extends javax.swing.JFrame {
     private javax.swing.JPanel pnlNewCustomer;
     private javax.swing.JPanel pnlNewItem;
     private javax.swing.JPanel pnlNewOrder;
+    private javax.swing.JPanel pnlNewOrder1;
     private javax.swing.JPanel pnlNewSalesRep;
     private javax.swing.JPanel pnlNewSup;
     private javax.swing.JPanel pnlOrders;

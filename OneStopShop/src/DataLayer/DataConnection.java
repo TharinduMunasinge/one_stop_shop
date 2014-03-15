@@ -160,12 +160,16 @@ public class DataConnection {
                         values += param[i] + ",";
                     }
                 }
+            values = values.substring(0, values.length() - 1);
             Connection con = DataConnection.getConnection();
             
             PreparedStatement pStmt = con.prepareStatement(
                     "Select " + values +
                     " FROM " + customer + " inner join " + customerContact+ 
+                    " on "+ customer +"." + customerID + " = "
+                        + customerContact + "."+ iD + " " +
                     " WHERE " + attr + " = '"+ predicate + "'");
+            System.out.println("statement : " + pStmt);
             return pStmt.executeQuery();
         } catch (SQLException ex) {
             Logger.getLogger(DataConnection.class.getName()).log(Level.SEVERE, null, ex);

@@ -128,9 +128,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `One_Stop_Shop`.`Employee`
+-- Table `One_Stop_Shop`.`SalesRepID`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `One_Stop_Shop`.`Employee` (
+CREATE TABLE IF NOT EXISTS `One_Stop_Shop`.`SalesRepID` (
   `SalesRepID` VARCHAR(10) NOT NULL,
   `Name` VARCHAR(45) NULL,
   `ContactNumber` VARCHAR(10) NULL,
@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `One_Stop_Shop`.`LargeOrderCustomer` (
     ON UPDATE CASCADE,
   CONSTRAINT `SalesRepID_LargeOrderCustomer_fk`
     FOREIGN KEY (`SalesRepID`)
-    REFERENCES `One_Stop_Shop`.`Employee` (`SalesRepID`)
+    REFERENCES `One_Stop_Shop`.`SalesRepID` (`SalesRepID`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -182,9 +182,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `One_Stop_Shop`.`WalkInVIP`
+-- Table `One_Stop_Shop`.`WalkIngVIP`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `One_Stop_Shop`.`WalkInVIP` (
+CREATE TABLE IF NOT EXISTS `One_Stop_Shop`.`WalkIngVIP` (
   `CustomerID` VARCHAR(10) NOT NULL,
   `TRN` VARCHAR(10) NOT NULL,
   `CreditFacilityAccepted` TINYINT(1) NOT NULL,
@@ -225,7 +225,7 @@ CREATE TABLE IF NOT EXISTS `One_Stop_Shop`.`UserAccount` (
   PRIMARY KEY (`UserName`),
   CONSTRAINT `AccountNumber_SalesRepID_UserAccount_fk`
     FOREIGN KEY (`AccountNumber`)
-    REFERENCES `One_Stop_Shop`.`Employee` (`SalesRepID`)
+    REFERENCES `One_Stop_Shop`.`SalesRepID` (`SalesRepID`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `AccountNumber_CustomerID_UserAccount_fk`
@@ -237,9 +237,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `One_Stop_Shop`.`SupplyChain`
+-- Table `One_Stop_Shop`.`Supplier`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `One_Stop_Shop`.`SupplyChain` (
+CREATE TABLE IF NOT EXISTS `One_Stop_Shop`.`Supplier` (
   `SupplierID` VARCHAR(10) NOT NULL,
   `SupplierName` VARCHAR(45) NULL,
   `AddressCity` VARCHAR(45) NULL,
@@ -260,7 +260,7 @@ CREATE TABLE IF NOT EXISTS `One_Stop_Shop`.`SupplierOrder` (
   INDEX `SupplierID_idx` (`SupplierID` ASC),
   CONSTRAINT `SupplierID_SupplierOrders_fk`
     FOREIGN KEY (`SupplierID`)
-    REFERENCES `One_Stop_Shop`.`SupplyChain` (`SupplierID`)
+    REFERENCES `One_Stop_Shop`.`Supplier` (`SupplierID`)
     ON DELETE NO ACTION
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
@@ -299,7 +299,7 @@ CREATE TABLE IF NOT EXISTS `One_Stop_Shop`.`SupplierContact` (
   INDEX `SupplierID_Contact_fk_idx` (`ID` ASC),
   CONSTRAINT `SupplierID_Contact_fk`
     FOREIGN KEY (`ID`)
-    REFERENCES `One_Stop_Shop`.`SupplyChain` (`SupplierID`)
+    REFERENCES `One_Stop_Shop`.`Supplier` (`SupplierID`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
@@ -315,7 +315,7 @@ CREATE TABLE IF NOT EXISTS `One_Stop_Shop`.`EmployeeContact` (
   INDEX `EmployeeID_Contact_fk0_idx` (`ID` ASC),
   CONSTRAINT `EmployeeID_Contact_fk0`
     FOREIGN KEY (`ID`)
-    REFERENCES `One_Stop_Shop`.`Employee` (`SalesRepID`)
+    REFERENCES `One_Stop_Shop`.`SalesRepID` (`SalesRepID`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
@@ -339,20 +339,55 @@ CREATE TABLE IF NOT EXISTS `One_Stop_Shop`.`ProcessedOrder` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
-CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';
 
-GRANT ALL ON `One_Stop_Shop`.* TO 'admin'@'localhost';
+-- -----------------------------------------------------
+-- Table `One_Stop_Shop`.`StockNotification`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `One_Stop_Shop`.`StockNotification` (
+  `Id` INT NOT NULL AUTO_INCREMENT,
+  `time` DATETIME NULL,
+  `processed` TINYINT(1) NULL,
+  `itemCode` VARCHAR(5) NULL,
+  `brandCode` VARCHAR(5) NULL,
+  PRIMARY KEY (`Id`),
+  INDEX `Item_BrandCode_fk_idx` (`brandCode` ASC),
+  INDEX `Item_ItemTypeCode_fk_idx` (`itemCode` ASC),
+  CONSTRAINT `Item_BrandCode_fk`
+    FOREIGN KEY (`brandCode`)
+    REFERENCES `One_Stop_Shop`.`Item` (`BrandCode`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `Item_ItemTypeCode_fk`
+    FOREIGN KEY (`itemCode`)
+    REFERENCES `One_Stop_Shop`.`Item` (`ItemTypeCode`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
 
+CREATE USER 'admin' IDENTIFIED BY 'admin';
 
-CREATE USER 'user'@'localhost' IDENTIFIED BY 'user';
+GRANT ALL ON `One_Stop_Shop`.* TO 'admin';
+GRANT SELECT, INSERT, TRIGGER ON TABLE `One_Stop_Shop`.* TO 'admin';
+GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE `One_Stop_Shop`.* TO 'admin';
+GRANT EXECUTE ON ROUTINE `One_Stop_Shop`.* TO 'admin';
+GRANT SELECT ON TABLE `One_Stop_Shop`.* TO 'admin';
+CREATE USER 'user' IDENTIFIED BY 'user';
 
-GRANT SELECT ON TABLE `One_Stop_Shop`.* TO 'user'@'localhost';
-GRANT SELECT, INSERT, TRIGGER ON TABLE `One_Stop_Shop`.* TO 'user'@'localhost';
-GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE `One_Stop_Shop`.* TO 'user'@'localhost';
-CREATE USER 'unregistered'@'localhost' IDENTIFIED BY 'unregistered';
+GRANT SELECT ON TABLE `One_Stop_Shop`.* TO 'user';
+GRANT SELECT, INSERT, TRIGGER ON TABLE `One_Stop_Shop`.* TO 'user';
+GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE `One_Stop_Shop`.* TO 'user';
+CREATE USER 'unregistered' IDENTIFIED BY 'unregistered';
 
-GRANT SELECT ON TABLE `One_Stop_Shop`.* TO 'unregistered'@'localhost';
+GRANT SELECT ON TABLE `One_Stop_Shop`.* TO 'unregistered';
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+USE `One_Stop_Shop`;
+
+DELIMITER $$
+USE `One_Stop_Shop`$$
+$$
+
+
+DELIMITER ;

@@ -247,6 +247,7 @@ public class ManagerView extends javax.swing.JFrame {
         pnlStock = new javax.swing.JPanel();
         jTabbedPane5 = new javax.swing.JTabbedPane();
         pnlFindItem = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jTabbedPane7 = new javax.swing.JTabbedPane();
         pnlFindOrder1 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
@@ -294,7 +295,7 @@ public class ManagerView extends javax.swing.JFrame {
         setTitle("One-Stop-Shop");
 
         jLabel1.setBackground(new java.awt.Color(0, 204, 255));
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 18));
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Notifications");
@@ -316,9 +317,9 @@ public class ManagerView extends javax.swing.JFrame {
                 .addContainerGap(429, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jTabbedPane1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(-16777216,true), 2, true));
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 36));
         jLabel8.setForeground(new java.awt.Color(0, 255, 51));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("One-Stop-Shop");
@@ -326,7 +327,7 @@ public class ManagerView extends javax.swing.JFrame {
         String str = "You are logged in as " + LogIn.getCurrentUser();
         lblLoginData.setText(str);
 
-        btnHomeCustomers.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnHomeCustomers.setFont(new java.awt.Font("Times New Roman", 1, 14));
         btnHomeCustomers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Customer.png"))); // NOI18N
         btnHomeCustomers.setText("Customers");
         btnHomeCustomers.addActionListener(new java.awt.event.ActionListener() {
@@ -335,7 +336,7 @@ public class ManagerView extends javax.swing.JFrame {
             }
         });
 
-        btnHomeSuppliers.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnHomeSuppliers.setFont(new java.awt.Font("Times New Roman", 1, 14));
         btnHomeSuppliers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Supplier.png"))); // NOI18N
         btnHomeSuppliers.setText("Suppliers");
         btnHomeSuppliers.setPreferredSize(new java.awt.Dimension(10, 50));
@@ -345,7 +346,7 @@ public class ManagerView extends javax.swing.JFrame {
             }
         });
 
-        btnHomeStock.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnHomeStock.setFont(new java.awt.Font("Times New Roman", 1, 14));
         btnHomeStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/stock.png"))); // NOI18N
         btnHomeStock.setText("Stock");
         btnHomeStock.addActionListener(new java.awt.event.ActionListener() {
@@ -354,7 +355,7 @@ public class ManagerView extends javax.swing.JFrame {
             }
         });
 
-        btnHomeRep.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnHomeRep.setFont(new java.awt.Font("Times New Roman", 1, 14));
         btnHomeRep.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/SalesRep.png"))); // NOI18N
         btnHomeRep.setText("Sales Representatives");
         btnHomeRep.addActionListener(new java.awt.event.ActionListener() {
@@ -363,7 +364,7 @@ public class ManagerView extends javax.swing.JFrame {
             }
         });
 
-        btnHomeOrders.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnHomeOrders.setFont(new java.awt.Font("Times New Roman", 1, 14));
         btnHomeOrders.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/orders.png"))); // NOI18N
         btnHomeOrders.setText("Orders");
         btnHomeOrders.addActionListener(new java.awt.event.ActionListener() {
@@ -379,7 +380,7 @@ public class ManagerView extends javax.swing.JFrame {
             }
         });
 
-        btnHomeUserAcco.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        btnHomeUserAcco.setFont(new java.awt.Font("Times New Roman", 1, 14));
         btnHomeUserAcco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/customerservice.png"))); // NOI18N
         btnHomeUserAcco.setText("User Accounts");
         btnHomeUserAcco.addActionListener(new java.awt.event.ActionListener() {
@@ -392,7 +393,7 @@ public class ManagerView extends javax.swing.JFrame {
         pnlHome.setLayout(pnlHomeLayout);
         pnlHomeLayout.setHorizontalGroup(
             pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
             .addGroup(pnlHomeLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -405,13 +406,13 @@ public class ManagerView extends javax.swing.JFrame {
                         .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlHomeLayout.createSequentialGroup()
                                 .addComponent(btnHomeRep)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
                                 .addComponent(btnHomeUserAcco, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(pnlHomeLayout.createSequentialGroup()
                                 .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnHomeCustomers, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnHomeSuppliers, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
                                 .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnHomeOrders, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnHomeStock, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -447,7 +448,7 @@ public class ManagerView extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Home", pnlHome);
 
-        jTabbedPane2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jTabbedPane2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(-16777216,true), 2, true));
 
         jLabel2.setText("Find Customer by ");
 
@@ -515,7 +516,7 @@ public class ManagerView extends javax.swing.JFrame {
             .addGroup(pnlFindCustLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlFindCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
                     .addGroup(pnlFindCustLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -540,10 +541,10 @@ public class ManagerView extends javax.swing.JFrame {
                                 .addComponent(chkBoxFindCustType)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(chkBoxFindCustTP)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                         .addComponent(btnFindCustFind))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFindCustLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 463, Short.MAX_VALUE)
                         .addComponent(btnFindCustCancel)))
                 .addContainerGap())
         );
@@ -882,7 +883,7 @@ public class ManagerView extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -1222,7 +1223,7 @@ public class ManagerView extends javax.swing.JFrame {
                                 .addComponent(btnEditSupUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnEditSupCancel)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 207, Short.MAX_VALUE))
                     .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -1418,7 +1419,7 @@ public class ManagerView extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Suppliers", pnlSuppliers);
 
-        jTabbedPane6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jTabbedPane6.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(-16777216,true), 2, true));
 
         jLabel48.setText("Find Sales Rep by ");
 
@@ -1479,7 +1480,7 @@ public class ManagerView extends javax.swing.JFrame {
             .addGroup(pnlFindCust1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlFindCust1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
                     .addGroup(pnlFindCust1Layout.createSequentialGroup()
                         .addComponent(jLabel48)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1504,10 +1505,10 @@ public class ManagerView extends javax.swing.JFrame {
                                 .addComponent(chkBoxFindRepType)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(chkBoxFindRepTP)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                         .addComponent(btnFindRepFind))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFindCust1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 483, Short.MAX_VALUE)
                         .addComponent(btnFindRepCancel)))
                 .addContainerGap())
         );
@@ -1739,7 +1740,7 @@ public class ManagerView extends javax.swing.JFrame {
             .addGroup(pnlEditCust1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlEditCust1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator3)
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
                     .addGroup(pnlEditCust1Layout.createSequentialGroup()
                         .addGroup(pnlEditCust1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlEditCust1Layout.createSequentialGroup()
@@ -1851,15 +1852,23 @@ public class ManagerView extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Sales Reps", pnlSalesReps);
 
+        jButton1.setText("jButton1");
+
         javax.swing.GroupLayout pnlFindItemLayout = new javax.swing.GroupLayout(pnlFindItem);
         pnlFindItem.setLayout(pnlFindItemLayout);
         pnlFindItemLayout.setHorizontalGroup(
             pnlFindItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGroup(pnlFindItemLayout.createSequentialGroup()
+                .addGap(230, 230, 230)
+                .addComponent(jButton1)
+                .addContainerGap(269, Short.MAX_VALUE))
         );
         pnlFindItemLayout.setVerticalGroup(
             pnlFindItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 432, Short.MAX_VALUE)
+            .addGroup(pnlFindItemLayout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(jButton1)
+                .addContainerGap(314, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("Search Item", pnlFindItem);
@@ -1997,7 +2006,7 @@ public class ManagerView extends javax.swing.JFrame {
             .addGroup(pnlEditOrder1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator4)
+                    .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
                     .addGroup(pnlEditOrder1Layout.createSequentialGroup()
                         .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlEditOrder1Layout.createSequentialGroup()
@@ -2791,6 +2800,7 @@ public class ManagerView extends javax.swing.JFrame {
     private javax.swing.JComboBox cmbFindRepBy;
     private javax.swing.JComboBox cmbFindSupBy;
     private javax.swing.JComboBox cmbNewCustType;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;

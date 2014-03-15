@@ -247,19 +247,6 @@ public class ManagerView extends javax.swing.JFrame {
         pnlStock = new javax.swing.JPanel();
         jTabbedPane5 = new javax.swing.JTabbedPane();
         pnlFindItem = new javax.swing.JPanel();
-        pnlUpdateItem = new javax.swing.JPanel();
-        pnlNewItem = new javax.swing.JPanel();
-        pnlRmvItem = new javax.swing.JPanel();
-        pnlOrders = new javax.swing.JPanel();
-        jTabbedPane3 = new javax.swing.JTabbedPane();
-        pnlFindOrder = new javax.swing.JPanel();
-        pnlEditOrder = new javax.swing.JPanel();
-        pnlNewOrder = new javax.swing.JPanel();
-        pnlRmvOrder = new javax.swing.JPanel();
-        pnlNewOrder1 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jTabbedPane7 = new javax.swing.JTabbedPane();
         pnlFindOrder1 = new javax.swing.JPanel();
         jLabel75 = new javax.swing.JLabel();
@@ -292,6 +279,16 @@ public class ManagerView extends javax.swing.JFrame {
         jButton26 = new javax.swing.JButton();
         jSeparator4 = new javax.swing.JSeparator();
         jButton27 = new javax.swing.JButton();
+        pnlOrders = new javax.swing.JPanel();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        pnlFindOrder = new javax.swing.JPanel();
+        pnlEditOrder = new javax.swing.JPanel();
+        pnlNewOrder = new javax.swing.JPanel();
+        pnlRmvOrder = new javax.swing.JPanel();
+        pnlNewOrder1 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("One-Stop-Shop");
@@ -316,7 +313,7 @@ public class ManagerView extends javax.swing.JFrame {
             .addGroup(NotificationPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(522, Short.MAX_VALUE))
+                .addContainerGap(429, Short.MAX_VALUE))
         );
 
         jTabbedPane1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
@@ -439,7 +436,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnHomeRep, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnHomeUserAcco, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(pnlHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLoginData, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnHomeLogOut))
@@ -527,7 +524,7 @@ public class ManagerView extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txtFindCustVal, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 96, Short.MAX_VALUE))
+                        .addGap(0, 76, Short.MAX_VALUE))
                     .addGroup(pnlFindCustLayout.createSequentialGroup()
                         .addGroup(pnlFindCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
@@ -574,7 +571,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnFindCustCancel)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Find Customer", pnlFindCust);
@@ -609,6 +606,11 @@ public class ManagerView extends javax.swing.JFrame {
         jLabel13.setText("Customer Type");
 
         cmbNewCustType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " ", "Mail-Order", "Long Term", "Walk-In VIP" }));
+        cmbNewCustType.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbNewCustTypeItemStateChanged(evt);
+            }
+        });
 
         btnNewCustCreate.setText("Create");
         btnNewCustCreate.addActionListener(new java.awt.event.ActionListener() {
@@ -667,7 +669,7 @@ public class ManagerView extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                             .addComponent(txtNewCustAddNum, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(txtNewCustEmail, javax.swing.GroupLayout.Alignment.LEADING)))
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addContainerGap(193, Short.MAX_VALUE))
         );
         pnlNewCustomerLayout.setVerticalGroup(
             pnlNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -713,7 +715,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addGroup(pnlNewCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNewCustCancel)
                     .addComponent(btnNewCustCreate))
-                .addContainerGap(223, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("New Customer", pnlNewCustomer);
@@ -773,7 +775,7 @@ public class ManagerView extends javax.swing.JFrame {
                         .addComponent(btnRmvCustRmv)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnRmvCustCancel)))
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addContainerGap(168, Short.MAX_VALUE))
         );
         pnlRmvCustLayout.setVerticalGroup(
             pnlRmvCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -789,7 +791,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addGroup(pnlRmvCustLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRmvCustRmv)
                     .addComponent(btnRmvCustCancel))
-                .addContainerGap(239, Short.MAX_VALUE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Remove Customer", pnlRmvCust);
@@ -923,7 +925,7 @@ public class ManagerView extends javax.swing.JFrame {
                                             .addComponent(txtEditCustAddNum, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addComponent(txtEditCustEmail)
                                         .addComponent(txtEditCustTP2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 183, Short.MAX_VALUE)))
+                        .addGap(0, 163, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -977,7 +979,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEditCustCancel)
                     .addComponent(btnEditCustUpdate))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlEditCustLayout = new javax.swing.GroupLayout(pnlEditCust);
@@ -1003,11 +1005,17 @@ public class ManagerView extends javax.swing.JFrame {
         pnlCustomers.setLayout(pnlCustomersLayout);
         pnlCustomersLayout.setHorizontalGroup(
             pnlCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomersLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane2)
+                .addContainerGap())
         );
         pnlCustomersLayout.setVerticalGroup(
             pnlCustomersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCustomersLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane2)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Customers", pnlCustomers);
@@ -1098,7 +1106,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnFindSupCancel)
-                .addContainerGap(245, Short.MAX_VALUE))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("Find Supplier", pnlFindSup);
@@ -1264,7 +1272,7 @@ public class ManagerView extends javax.swing.JFrame {
                     .addComponent(btnEditSupCancel)
                     .addComponent(btnEditSupUpdate)
                     .addComponent(btnEditSupRmv))
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("Edit Supplier", pnlEditSup);
@@ -1392,7 +1400,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addGroup(pnlNewSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNewSupCancel)
                     .addComponent(btnNewSupCreate))
-                .addContainerGap(291, Short.MAX_VALUE))
+                .addContainerGap(199, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("New Supplier", pnlNewSup);
@@ -1527,7 +1535,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnFindRepCancel)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         jTabbedPane6.addTab("Find Sales Rep", pnlFindCust1);
@@ -1656,7 +1664,7 @@ public class ManagerView extends javax.swing.JFrame {
                 .addGroup(pnlNewSalesRepLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNewRepCancel)
                     .addComponent(btnNewRepCreate))
-                .addContainerGap(223, Short.MAX_VALUE))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
 
         jTabbedPane6.addTab("New Sales Rep", pnlNewSalesRep);
@@ -1825,7 +1833,7 @@ public class ManagerView extends javax.swing.JFrame {
                     .addComponent(btnEditRepCancel)
                     .addComponent(btnEditRepUpdate)
                     .addComponent(btnEditRepRmv))
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         jTabbedPane6.addTab("Edit Sales Rep Details", pnlEditCust1);
@@ -1851,49 +1859,10 @@ public class ManagerView extends javax.swing.JFrame {
         );
         pnlFindItemLayout.setVerticalGroup(
             pnlFindItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
+            .addGap(0, 432, Short.MAX_VALUE)
         );
 
-        jTabbedPane5.addTab("Find Item", pnlFindItem);
-
-        javax.swing.GroupLayout pnlUpdateItemLayout = new javax.swing.GroupLayout(pnlUpdateItem);
-        pnlUpdateItem.setLayout(pnlUpdateItemLayout);
-        pnlUpdateItemLayout.setHorizontalGroup(
-            pnlUpdateItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
-        );
-        pnlUpdateItemLayout.setVerticalGroup(
-            pnlUpdateItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
-        );
-
-        jTabbedPane5.addTab("Update Item", pnlUpdateItem);
-
-        javax.swing.GroupLayout pnlNewItemLayout = new javax.swing.GroupLayout(pnlNewItem);
-        pnlNewItem.setLayout(pnlNewItemLayout);
-        pnlNewItemLayout.setHorizontalGroup(
-            pnlNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
-        );
-        pnlNewItemLayout.setVerticalGroup(
-            pnlNewItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
-        );
-
-        jTabbedPane5.addTab("New Item", pnlNewItem);
-
-        javax.swing.GroupLayout pnlRmvItemLayout = new javax.swing.GroupLayout(pnlRmvItem);
-        pnlRmvItem.setLayout(pnlRmvItemLayout);
-        pnlRmvItemLayout.setHorizontalGroup(
-            pnlRmvItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
-        );
-        pnlRmvItemLayout.setVerticalGroup(
-            pnlRmvItemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
-        );
-
-        jTabbedPane5.addTab("Remove Item", pnlRmvItem);
+        jTabbedPane5.addTab("Search Item", pnlFindItem);
 
         javax.swing.GroupLayout pnlStockLayout = new javax.swing.GroupLayout(pnlStock);
         pnlStock.setLayout(pnlStockLayout);
@@ -1907,6 +1876,204 @@ public class ManagerView extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Stock", pnlStock);
+
+        jLabel75.setText("User Name");
+
+        jLabel76.setText("Password");
+
+        jLabel77.setText("Confirm Password");
+
+        jLabel78.setText("Account Type");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        btnUserCancel.setText("Cancel");
+
+        btnUserCreate.setText("Create");
+
+        jLabel79.setText("Account Number");
+
+        txtUserPassConfirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUserPassConfirmActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlFindOrder1Layout = new javax.swing.GroupLayout(pnlFindOrder1);
+        pnlFindOrder1.setLayout(pnlFindOrder1Layout);
+        pnlFindOrder1Layout.setHorizontalGroup(
+            pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlFindOrder1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(pnlFindOrder1Layout.createSequentialGroup()
+                            .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel75)
+                                .addComponent(jLabel76)
+                                .addComponent(jLabel77)
+                                .addComponent(jLabel78))
+                            .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(pnlFindOrder1Layout.createSequentialGroup()
+                                    .addGap(20, 20, 20)
+                                    .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                                        .addComponent(txtUserPass)
+                                        .addComponent(txtUserAccNum)))
+                                .addGroup(pnlFindOrder1Layout.createSequentialGroup()
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtUserPassConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE))))
+                        .addGroup(pnlFindOrder1Layout.createSequentialGroup()
+                            .addComponent(btnUserCreate)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(btnUserCancel)))
+                    .addComponent(jLabel79))
+                .addContainerGap(316, Short.MAX_VALUE))
+        );
+        pnlFindOrder1Layout.setVerticalGroup(
+            pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlFindOrder1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel75)
+                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel76)
+                    .addComponent(txtUserPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel77)
+                    .addComponent(txtUserPassConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel78)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel79)
+                    .addComponent(txtUserAccNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnUserCancel)
+                    .addComponent(btnUserCreate))
+                .addContainerGap(199, Short.MAX_VALUE))
+        );
+
+        jTabbedPane7.addTab("Create User", pnlFindOrder1);
+
+        jLabel80.setText("User Name");
+
+        jLabel81.setText("Password");
+
+        jLabel82.setText("Confirm Password");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel83.setText("Account Type");
+
+        jLabel84.setText("Account Number");
+
+        jButton24.setText("Update");
+
+        jButton25.setText("Cancel");
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
+
+        jLabel85.setText("Search For User Name");
+
+        jButton26.setText("Search");
+
+        jButton27.setText("Remove");
+
+        javax.swing.GroupLayout pnlEditOrder1Layout = new javax.swing.GroupLayout(pnlEditOrder1);
+        pnlEditOrder1.setLayout(pnlEditOrder1Layout);
+        pnlEditOrder1Layout.setHorizontalGroup(
+            pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditOrder1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator4)
+                    .addGroup(pnlEditOrder1Layout.createSequentialGroup()
+                        .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlEditOrder1Layout.createSequentialGroup()
+                                .addComponent(jLabel85)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton26))
+                            .addComponent(jLabel84)
+                            .addGroup(pnlEditOrder1Layout.createSequentialGroup()
+                                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlEditOrder1Layout.createSequentialGroup()
+                                        .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel80)
+                                            .addComponent(jLabel81)
+                                            .addComponent(jLabel82)
+                                            .addComponent(jLabel83))
+                                        .addGap(20, 20, 20))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditOrder1Layout.createSequentialGroup()
+                                        .addComponent(jButton27)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlEditOrder1Layout.createSequentialGroup()
+                                        .addComponent(jButton24)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jButton25))
+                                    .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                                        .addComponent(jTextField4)
+                                        .addComponent(jPasswordField2)
+                                        .addComponent(jTextField6)))))
+                        .addGap(0, 218, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        pnlEditOrder1Layout.setVerticalGroup(
+            pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditOrder1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel85)
+                    .addComponent(jButton26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel80)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel81)
+                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel82)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel83)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel84)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton25)
+                    .addComponent(jButton24)
+                    .addComponent(jButton27))
+                .addContainerGap(158, Short.MAX_VALUE))
+        );
+
+        jTabbedPane7.addTab("Edit User", pnlEditOrder1);
+
+        jTabbedPane1.addTab("User Account", jTabbedPane7);
 
         javax.swing.GroupLayout pnlFindOrderLayout = new javax.swing.GroupLayout(pnlFindOrder);
         pnlFindOrder.setLayout(pnlFindOrderLayout);
@@ -2018,204 +2185,6 @@ public class ManagerView extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Orders", pnlOrders);
 
-        jLabel75.setText("User Name");
-
-        jLabel76.setText("Password");
-
-        jLabel77.setText("Confirm Password");
-
-        jLabel78.setText("Account Type");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        btnUserCancel.setText("Cancel");
-
-        btnUserCreate.setText("Create");
-
-        jLabel79.setText("Account Number");
-
-        txtUserPassConfirm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUserPassConfirmActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnlFindOrder1Layout = new javax.swing.GroupLayout(pnlFindOrder1);
-        pnlFindOrder1.setLayout(pnlFindOrder1Layout);
-        pnlFindOrder1Layout.setHorizontalGroup(
-            pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlFindOrder1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(pnlFindOrder1Layout.createSequentialGroup()
-                            .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel75)
-                                .addComponent(jLabel76)
-                                .addComponent(jLabel77)
-                                .addComponent(jLabel78))
-                            .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(pnlFindOrder1Layout.createSequentialGroup()
-                                    .addGap(20, 20, 20)
-                                    .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                                        .addComponent(txtUserPass)
-                                        .addComponent(txtUserAccNum)))
-                                .addGroup(pnlFindOrder1Layout.createSequentialGroup()
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtUserPassConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE))))
-                        .addGroup(pnlFindOrder1Layout.createSequentialGroup()
-                            .addComponent(btnUserCreate)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(btnUserCancel)))
-                    .addComponent(jLabel79))
-                .addContainerGap(316, Short.MAX_VALUE))
-        );
-        pnlFindOrder1Layout.setVerticalGroup(
-            pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlFindOrder1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel75)
-                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel76)
-                    .addComponent(txtUserPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel77)
-                    .addComponent(txtUserPassConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel78)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel79)
-                    .addComponent(txtUserAccNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(pnlFindOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUserCancel)
-                    .addComponent(btnUserCreate))
-                .addContainerGap(291, Short.MAX_VALUE))
-        );
-
-        jTabbedPane7.addTab("Create User", pnlFindOrder1);
-
-        jLabel80.setText("User Name");
-
-        jLabel81.setText("Password");
-
-        jLabel82.setText("Confirm Password");
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel83.setText("Account Type");
-
-        jLabel84.setText("Account Number");
-
-        jButton24.setText("Update");
-
-        jButton25.setText("Cancel");
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton25ActionPerformed(evt);
-            }
-        });
-
-        jLabel85.setText("Search For User Name");
-
-        jButton26.setText("Search");
-
-        jButton27.setText("Remove");
-
-        javax.swing.GroupLayout pnlEditOrder1Layout = new javax.swing.GroupLayout(pnlEditOrder1);
-        pnlEditOrder1.setLayout(pnlEditOrder1Layout);
-        pnlEditOrder1Layout.setHorizontalGroup(
-            pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlEditOrder1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator4)
-                    .addGroup(pnlEditOrder1Layout.createSequentialGroup()
-                        .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlEditOrder1Layout.createSequentialGroup()
-                                .addComponent(jLabel85)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton26))
-                            .addComponent(jLabel84)
-                            .addGroup(pnlEditOrder1Layout.createSequentialGroup()
-                                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pnlEditOrder1Layout.createSequentialGroup()
-                                        .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel80)
-                                            .addComponent(jLabel81)
-                                            .addComponent(jLabel82)
-                                            .addComponent(jLabel83))
-                                        .addGap(20, 20, 20))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditOrder1Layout.createSequentialGroup()
-                                        .addComponent(jButton27)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pnlEditOrder1Layout.createSequentialGroup()
-                                        .addComponent(jButton24)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton25))
-                                    .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                                        .addComponent(jTextField4)
-                                        .addComponent(jPasswordField2)
-                                        .addComponent(jTextField6)))))
-                        .addGap(0, 218, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        pnlEditOrder1Layout.setVerticalGroup(
-            pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlEditOrder1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel85)
-                    .addComponent(jButton26))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel80)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel81)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel82)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel83)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel84)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pnlEditOrder1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton25)
-                    .addComponent(jButton24)
-                    .addComponent(jButton27))
-                .addContainerGap(250, Short.MAX_VALUE))
-        );
-
-        jTabbedPane7.addTab("Edit User", pnlEditOrder1);
-
-        jTabbedPane1.addTab("User Account", jTabbedPane7);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -2232,8 +2201,8 @@ public class ManagerView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NotificationPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NotificationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -2421,12 +2390,12 @@ public class ManagerView extends javax.swing.JFrame {
 
     private void btnHomeStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeStockActionPerformed
         // TODO add your handling code here:
-        jTabbedPane1.setSelectedIndex(3);
+        jTabbedPane1.setSelectedIndex(4);
     }//GEN-LAST:event_btnHomeStockActionPerformed
 
     private void btnHomeRepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeRepActionPerformed
         // TODO add your handling code here:
-        jTabbedPane1.setSelectedIndex(4);
+        jTabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_btnHomeRepActionPerformed
 
     private void btnHomeCustomersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeCustomersActionPerformed
@@ -2441,7 +2410,7 @@ public class ManagerView extends javax.swing.JFrame {
 
     private void btnHomeOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeOrdersActionPerformed
         // TODO add your handling code here:
-        jTabbedPane1.setSelectedIndex(5);
+        jTabbedPane1.setSelectedIndex(6);
     }//GEN-LAST:event_btnHomeOrdersActionPerformed
 
     private void btnHomeLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeLogOutActionPerformed
@@ -2662,6 +2631,7 @@ public class ManagerView extends javax.swing.JFrame {
 
     private void btnHomeUserAccoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeUserAccoActionPerformed
         // TODO add your handling code here:
+        jTabbedPane1.setSelectedIndex(5);
     }//GEN-LAST:event_btnHomeUserAccoActionPerformed
 
     private void btnRmvCustCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRmvCustCancelActionPerformed
@@ -2711,16 +2681,20 @@ public class ManagerView extends javax.swing.JFrame {
         // TODO add your handling code here:
         switch(cmbEditCustType.getSelectedIndex()){
             case 1:
-                // create a Mail Order 
-                break;
+            // create a Mail Order
+            break;
             case 2:
-                // create a Long term Customer
-                break;
+            // create a Long term Customer
+            break;
             case 3:
-                // create a walk in VIP
-                break;
+            // create a walk in VIP
+            break;
         }
     }//GEN-LAST:event_cmbEditCustTypeItemStateChanged
+
+    private void cmbNewCustTypeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbNewCustTypeItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbNewCustTypeItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -2944,19 +2918,16 @@ public class ManagerView extends javax.swing.JFrame {
     private javax.swing.JPanel pnlFindSup;
     private javax.swing.JPanel pnlHome;
     private javax.swing.JPanel pnlNewCustomer;
-    private javax.swing.JPanel pnlNewItem;
     private javax.swing.JPanel pnlNewOrder;
     private javax.swing.JPanel pnlNewOrder1;
     private javax.swing.JPanel pnlNewSalesRep;
     private javax.swing.JPanel pnlNewSup;
     private javax.swing.JPanel pnlOrders;
     private javax.swing.JPanel pnlRmvCust;
-    private javax.swing.JPanel pnlRmvItem;
     private javax.swing.JPanel pnlRmvOrder;
     private javax.swing.JPanel pnlSalesReps;
     private javax.swing.JPanel pnlStock;
     private javax.swing.JPanel pnlSuppliers;
-    private javax.swing.JPanel pnlUpdateItem;
     private javax.swing.JTable tableFindCust;
     private javax.swing.JTable tableFindSupDetails;
     private javax.swing.JTextField txtEdiRepAddtNum;

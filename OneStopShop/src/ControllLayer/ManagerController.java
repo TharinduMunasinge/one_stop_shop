@@ -55,8 +55,9 @@ public class ManagerController {
             param[5] = "TelephoneNumber";
         }
 
-        ResultSet resultSet = DataConnection.getSelectedData("Customer natural join customercontact",
-                param, attr, predicate);
+        ResultSet resultSet = DataConnection.getJoin("Customer",
+                "CustomerContact" , "CustomerID" , "ID" , 
+                param , attr , predicate);
         if (resultSet == null) {
             return null;
         } else {
@@ -69,8 +70,8 @@ public class ManagerController {
     }
 
     public static String[] getCustomerDetails(String id) {
+        String[] details = new String[8];
         try {
-            String[] details = new String[8];
             String[] all = new String[1];
             all[0] = "*";
 
@@ -93,7 +94,7 @@ public class ManagerController {
             Logger.getLogger(ManagerController.class.getName()).log(
                     Level.SEVERE, null, ex);
         }
-        return null;
+        return details;
     }
 
     private static JTable getTable(ResultSet resultSet) {

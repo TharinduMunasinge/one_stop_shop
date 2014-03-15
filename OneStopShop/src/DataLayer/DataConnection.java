@@ -147,4 +147,29 @@ public class DataConnection {
             return false;
         }
     }
+
+    public static ResultSet getJoin(String customer, String customerContact, 
+            String customerID, String iD, String[] param, String attr, 
+            String predicate) {
+        try {
+            ResultSet rs = null;
+            String values = "";
+                for (int i = 0; i < param.length; i++) {
+                    System.out.println("Parameter " + i + " : " + param[i]);
+                    if (!param[i].equals("")) {
+                        values += param[i] + ",";
+                    }
+                }
+            Connection con = DataConnection.getConnection();
+            
+            PreparedStatement pStmt = con.prepareStatement(
+                    "Select " + values +
+                    " FROM " + customer + " inner join " + customerContact+ 
+                    " WHERE " + attr + " = '"+ predicate + "'");
+            return pStmt.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(DataConnection.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 }

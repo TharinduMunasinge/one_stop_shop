@@ -15,6 +15,7 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
 /**
@@ -138,5 +139,24 @@ public class DataConnection {
         }
         
         return table;
+    }
+    
+    public static ResultSet getDate(String tableName, String[] param){
+        String values="";
+        for(int i=0;i<param.length;i++){
+             values += param[i] +",";
+             
+            try {
+            Connection con = DataConnection.getConnection();
+            PreparedStatement pStmt = con.prepareStatement("select" + values + "from" + tableName);
+            ResultSet resultSet = pStmt.executeQuery();
+            return resultSet;
+            
+        
+        } catch (Exception e) {
+            System.out.println(e);
+        }         
+    }
+        return null;
     }
 }

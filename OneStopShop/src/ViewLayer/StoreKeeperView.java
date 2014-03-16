@@ -4,6 +4,8 @@
  */
 package ViewLayer;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Malakagl
@@ -14,7 +16,9 @@ public class StoreKeeperView extends javax.swing.JFrame {
      * Creates new form StoreKeeperView
      */
     public StoreKeeperView() {
+                
         initComponents();
+        
     }
 
     /**
@@ -28,11 +32,12 @@ public class StoreKeeperView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
+        TabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
         jScrollPane3 = new javax.swing.JScrollPane();
         CurrentStatus = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
@@ -74,9 +79,9 @@ public class StoreKeeperView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("One-Stop-Shop");
 
-        jTabbedPane2.setToolTipText("");
-        jTabbedPane2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTabbedPane2.setName(""); // NOI18N
+        TabbedPane1.setToolTipText("");
+        TabbedPane1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        TabbedPane1.setName(""); // NOI18N
 
         jButton5.setText("Search");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +91,11 @@ public class StoreKeeperView extends javax.swing.JFrame {
         });
 
         jButton6.setText("Order Items");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Update");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +114,8 @@ public class StoreKeeperView extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(CurrentStatus);
 
+        jScrollPane5.setViewportView(jScrollPane3);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -112,30 +124,30 @@ public class StoreKeeperView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jScrollPane5)
+                        .addContainerGap())
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                         .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(71, 71, 71)
                         .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3)
-                        .addContainerGap())))
+                        .addGap(24, 24, 24))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                     .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Home", jPanel3);
+        TabbedPane1.addTab("Home", jPanel3);
 
         jPanel4.setToolTipText("");
         jPanel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -186,6 +198,11 @@ public class StoreKeeperView extends javax.swing.JFrame {
         jScrollPane1.setViewportView(ItemDetails);
 
         jButton1.setText("Search");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -262,7 +279,7 @@ public class StoreKeeperView extends javax.swing.JFrame {
 
         txtSearchVal.getAccessibleContext().setAccessibleName("txtSearchVal");
 
-        jTabbedPane2.addTab("Search ", jPanel4);
+        TabbedPane1.addTab("Search ", jPanel4);
 
         jLabel5.setText("Available quanitity less than");
 
@@ -327,7 +344,7 @@ public class StoreKeeperView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Order", jPanel5);
+        TabbedPane1.addTab("Order", jPanel5);
 
         jLabel6.setText("Item Number");
 
@@ -401,24 +418,24 @@ public class StoreKeeperView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Update", jPanel6);
+        TabbedPane1.addTab("Update", jPanel6);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 2, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.getAccessibleContext().setAccessibleName("tab2");
+        TabbedPane1.getAccessibleContext().setAccessibleName("tab2");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -463,6 +480,7 @@ public class StoreKeeperView extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        TabbedPane1.setSelectedIndex(3);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void txtQtyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQtyActionPerformed
@@ -475,7 +493,18 @@ public class StoreKeeperView extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        TabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        TabbedPane1.setSelectedIndex(2);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Search");
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -516,6 +545,7 @@ public class StoreKeeperView extends javax.swing.JFrame {
     private javax.swing.JTable ItemDetails;
     private javax.swing.JTable ItemOrder;
     private javax.swing.JTable ItemUpdate;
+    private javax.swing.JTabbedPane TabbedPane1;
     private javax.swing.JCheckBox chkBoxAvlQty;
     private javax.swing.JCheckBox chkBoxBPrc;
     private javax.swing.JCheckBox chkBoxDes;
@@ -551,7 +581,7 @@ public class StoreKeeperView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTextField txtItemNum;
     private javax.swing.JTextField txtQty;
     private javax.swing.JTextField txtQtyOdr;
